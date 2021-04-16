@@ -1,0 +1,23 @@
+{
+  "name": "pappelitos",
+  "version": "1.0.0",
+  "description": "A cool gaming monorepo with JS code",
+  "main": "index.js",
+  "scripts": {
+    "bootstrap": "lerna bootstrap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaMengambrea/pappelitos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LaMengambrea/pappelitos/issues"
+  },
+  "homepage": "https://github.com/LaMengambrea/pappelitos#readme",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
