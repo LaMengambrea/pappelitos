@@ -4,7 +4,14 @@
   "description": "A cool gaming monorepo with JS code",
   "main": "index.js",
   "scripts": {
+    "test": "lerna run test",
     "bootstrap": "lerna bootstrap"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": "10.18.0"
   },
   "repository": {
     "type": "git",
