@@ -23,6 +23,7 @@
   },
   "scripts": {
     "start": "node src/samus.js",
+    "dev": "nodemon src/samus.js",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
@@ -31,5 +32,8 @@
   "dependencies": {
     "discord.js": "^12.5.3",
     "dotenv": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
