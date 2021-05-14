@@ -1,0 +1,35 @@
+{
+  "name": "samus",
+  "version": "1.0.1",
+  "description": "A discord bot app",
+  "keywords": [
+    "gaming",
+    "discord"
+  ],
+  "author": "Alan Zam <alnzam17@gmail.com>",
+  "homepage": "https://github.com/LaMengambrea/pappelitos/tree/main/packages/samus#readme",
+  "license": "ISC",
+  "main": "src/samus.js",
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaMengambrea/pappelitos.git"
+  },
+  "scripts": {
+    "start": "node src/samus.js",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/LaMengambrea/pappelitos/issues"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^9.0.2"
+  }
+}
