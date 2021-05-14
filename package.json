@@ -1,5 +1,6 @@
 {
   "name": "pappelitos",
+  "private": true,
   "version": "1.0.0",
   "description": "A cool gaming monorepo with JS code",
   "main": "index.js",
