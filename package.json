@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "lerna run test",
+    "lint": "eslint .",
     "bootstrap": "lerna bootstrap",
     "new-version": "lerna version --conventional-commits --yes"
   },
@@ -27,6 +28,7 @@
   },
   "homepage": "https://github.com/LaMengambrea/pappelitos#readme",
   "devDependencies": {
+    "eslint": "^7.26.0",
     "lerna": "^4.0.0"
   }
 }
