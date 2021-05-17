@@ -8,7 +8,8 @@
     "test": "lerna run test",
     "lint": "eslint .",
     "bootstrap": "lerna bootstrap",
-    "new-version": "lerna version --conventional-commits --yes"
+    "new-version": "lerna version --conventional-commits --yes",
+    "prepare": "husky install"
   },
   "workspaces": [
     "packages/*"
@@ -29,6 +30,15 @@
   "homepage": "https://github.com/LaMengambrea/pappelitos#readme",
   "devDependencies": {
     "eslint": "^7.26.0",
-    "lerna": "^4.0.0"
+    "husky": "^6.0.0",
+    "lerna": "^4.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "2.3.0",
+    "pretty-quick": "^3.1.0"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown",
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   }
 }
