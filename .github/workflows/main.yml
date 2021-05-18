@@ -36,9 +36,7 @@ jobs:
           node-version: 12.22.1
 
       - name: Yarn Install
-        uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: install # will run `yarn install` command
+        run: yarn install
 
       - name: Run linters
         uses: wearerequired/lint-action@v1
