@@ -1,4 +1,5 @@
 require('dotenv').config();
+const state = require('./state');
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -21,9 +22,6 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-const players = [];
-const wordCollection = [];
-
 client.on('message', (msg) => {
   if (msg.author.bot) return;
 
@@ -32,7 +30,32 @@ client.on('message', (msg) => {
 
   const commandName = args.shift().toLowerCase();
 
-  if (!client.commands.has(commandName)) return;
+  if (!client.commands.has(commandName)) {
+    if (msg.channel.type === 'dm') {
+      const currentPlayer = {
+        id: msg.author.id,
+        username: msg.author.username,
+      };
+
+      if (state.isDraftEnabled) {
+        const playerCollection = state.wordCollection.find(
+          (w) => w.playerId === currentPlayer.id
+        );
+        if (playerCollection) {
+          playerCollection.words.push(msg.content);
+        } else {
+          state.wordCollection.push({
+            playerId: currentPlayer.id,
+            words: [msg.content],
+          });
+        }
+      } else {
+        msg.channel.send('Im not ready to write pappelitos');
+      }
+    }
+
+    return;
+  }
 
   const command = client.commands.get(commandName);
 
@@ -42,24 +65,6 @@ client.on('message', (msg) => {
     console.error(error);
     msg.reply('there was an error trying to execute that command!');
   }
-
-  const player = { id: msg.author.id, username: msg.author.username };
-
-  if (!players.find((p) => p.id === player.id)) {
-    players.push(player);
-    console.log('Players', players);
-  }
-
-  wordCollection.push({
-    playerId: player.id,
-    word: msg.content,
-  });
-
-  const wordCollectionAsList = wordCollection.reduce(
-    (prev, acc) => prev + acc.word + '\n',
-    ''
-  );
-  msg.channel.send('Words:\n' + wordCollectionAsList);
 });
 
 client.login(process.env.DISCORD_BOT_TOKEN);
