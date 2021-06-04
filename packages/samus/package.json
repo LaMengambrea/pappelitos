@@ -24,7 +24,7 @@
   "scripts": {
     "start": "node src/samus.js",
     "dev": "nodemon src/samus.js",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "yarn jest"
   },
   "bugs": {
     "url": "https://github.com/LaMengambrea/pappelitos/issues"
