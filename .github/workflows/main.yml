@@ -43,3 +43,22 @@ jobs:
         with:
           eslint: true
           prettier: true
+
+  test:
+    name: Unit & Integration Tests
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 12.22.1
+
+      - name: Yarn Install
+        run: yarn install
+
+      - name: Jest Tests
+        run: yarn test
