@@ -5,7 +5,7 @@
   "description": "A cool gaming monorepo with JS code",
   "main": "index.js",
   "scripts": {
-    "test": "lerna run test",
+    "test": "yarn jest --passWithNoTests",
     "lint": "eslint .",
     "bootstrap": "lerna bootstrap",
     "new-version": "lerna version --conventional-commits --yes",
@@ -31,10 +31,13 @@
   "devDependencies": {
     "eslint": "^7.26.0",
     "husky": "^6.0.0",
+    "jest": "^27.0.4",
     "lerna": "^4.0.0",
     "lint-staged": "^11.0.0",
     "prettier": "2.3.0",
-    "pretty-quick": "^3.1.0"
+    "pretty-quick": "^3.1.0",
+    "ts-jest": "^27.0.2",
+    "typescript": "^4.3.2"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",
