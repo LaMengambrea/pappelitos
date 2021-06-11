@@ -3,7 +3,7 @@ const state = require('../state');
 module.exports = {
   name: 'ready',
   description: 'Ready',
-  execute(message) {
+  callback({ message }) {
     try {
       console.log('State', state);
       console.log('Wordcollection', state.wordCollection);
