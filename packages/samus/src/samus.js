@@ -56,15 +56,6 @@ client.on('message', (msg) => {
 
     return;
   }
-
-  const command = client.commands.get(commandName);
-
-  try {
-    command.execute(msg, args);
-  } catch (error) {
-    console.error(error);
-    msg.reply('there was an error trying to execute that command!');
-  }
 });
 
 client.login(process.env.DISCORD_BOT_TOKEN);
